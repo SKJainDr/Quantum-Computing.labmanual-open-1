@@ -1,0 +1,78 @@
+[
+  {
+    "file": "00-front-matter.md",
+    "title": "Front Matter & Preface"
+  },
+  {
+    "file": "01-lab-setup.md",
+    "title": "Setting Up & Understanding the Quantum Computing Laboratory"
+  },
+  {
+    "file": "02-experiment-1.md",
+    "title": "Experiment 1 — GHZ+i State Evolution"
+  },
+  {
+    "file": "03-experiment-2.md",
+    "title": "Experiment 2 — Density Matrix Analysis and Von Neumann Entropy"
+  },
+  {
+    "file": "04-experiment-3.md",
+    "title": "Experiment 3 — Entanglement Quantification and Schmidt Decomposition"
+  },
+  {
+    "file": "05-experiment-4.md",
+    "title": "Experiment 4 — Purity and Fidelity Tracker"
+  },
+  {
+    "file": "06-experiment-5.md",
+    "title": "Experiment 5 — Noise and Decoherence Laboratory"
+  },
+  {
+    "file": "07-experiment-6.md",
+    "title": "Experiment 6 — Sampling Laboratory: Shot Noise & Statistical Convergence"
+  },
+  {
+    "file": "08-experiment-7.md",
+    "title": "Experiment 7 — Quantum Teleportation Protocol"
+  },
+  {
+    "file": "09-experiment-8.md",
+    "title": "Experiment 8 — CHSH Bell Inequality Violation"
+  },
+  {
+    "file": "10-experiment-9.md",
+    "title": "Experiment 9 — Quantum Fourier Transform"
+  },
+  {
+    "file": "11-experiment-10.md",
+    "title": "Experiment 10 — Grover's Search Algorithm"
+  },
+  {
+    "file": "12-experiment-11.md",
+    "title": "Experiment 11 — Expectation Value Sweeps and Quantum Correlations"
+  },
+  {
+    "file": "13-experiment-12.md",
+    "title": "Experiment 12 — Bernstein–Vazirani Algorithm"
+  },
+  {
+    "file": "14-experiment-13.md",
+    "title": "Experiment 13 — Quantum Random Number Generator"
+  },
+  {
+    "file": "15-experiment-14.md",
+    "title": "Experiment 14 — Bell States and CHSH Inequality (IBM Hardware)"
+  },
+  {
+    "file": "16-experiment-15.md",
+    "title": "Experiment 15 — IBM Quantum Hardware: Complete Circuit Execution"
+  },
+  {
+    "file": "17-assessment-guide.md",
+    "title": "Assessment Guide — Lab Record and Examination"
+  },
+  {
+    "file": "18-index.md",
+    "title": "Index"
+  }
+]
