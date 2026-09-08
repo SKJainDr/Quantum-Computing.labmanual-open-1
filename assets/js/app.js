@@ -260,7 +260,7 @@
     speakNext();
   }
 
-  function startReading() {
+  function startReadingFrom(idx) {
     if (!synth) {
       alert("Your browser does not support the Web Speech API for read-aloud.");
       return;
@@ -271,7 +271,11 @@
     els.playBtn.classList.add("speaking");
     els.iconPlay.style.display = "none";
     els.iconPause.style.display = "block";
-    speakFrom(0);
+    speakFrom(idx);
+  }
+
+  function startReading() {
+    startReadingFrom(0);
   }
 
   function togglePause() {
@@ -303,15 +307,38 @@
   els.stopBtn.addEventListener("click", stopReading);
   window.addEventListener("hashchange", stopReading);
 
+  /* ---------------- READ ALOUD: START FROM ANY POINT ----------------
+     Click any paragraph, heading, list item, or box text in the reading
+     pane to begin (or jump) narration from that exact spot, instead of
+     always starting at the top of the chapter. A text-selection drag is
+     treated as "select text", not "jump here", so copying still works
+     normally on the plain site. */
+  if (synth) document.body.classList.add("tts-ready");
+
+  const READABLE_SELECTOR = "h1, h2, h3, h4, p, li, blockquote, .box .box-title, .box p, figcaption";
+  els.chapterContent.addEventListener("click", (e) => {
+    if (!synth) return;
+    if (e.target.closest("a, button, input, select, textarea")) return;
+    const sel = window.getSelection();
+    if (sel && sel.toString().trim().length > 0) return; // was selecting text, not jumping
+    const block = e.target.closest(READABLE_SELECTOR);
+    if (!block || !els.chapterContent.contains(block)) return;
+    const chunks = getReadableChunks();
+    const idx = chunks.indexOf(block);
+    if (idx === -1) return;
+    startReadingFrom(idx);
+  });
+
   /* ---------------- SERIES CROSS-LINKS ----------------
      Each site in the series links to its sibling volume(s) here. This site
      doesn't know the sibling's deployed URL automatically — fill in the
      real GitHub Pages URL(s) below once every volume is live. Until then,
      the link is inert (points to "#") rather than guessing a URL. */
-  const SERIES_LINKS = [
+    const SERIES_LINKS = [
       { label: "Volume I — Quantum Computers (Textbook)", url: "https://skjaindr.github.io/Quantum-Computing.book-open-1/" },
       { label: "Volume II — Quantum Algorithms & Complexity (Textbook)", url: "https://skjaindr.github.io/Quantum-Computing.book-open-2/" },
-{ label: "Volume III — Quantum Hardware, Error Correction & Applications", url: "https://skjaindr.github.io/Quantum-Computing.book-open-3" },
+      { label: "Volume III — Quantum Hardware, Error Correction & Applications", url: "https://skjaindr.github.io/Quantum-Computing.book-open-3" },
+      { label: "Lab Manual II — Advanced Quantum Algorithms & Hardware", url: "https://skjaindr.github.io/quantum-computing-labmanual-open-2/" },
   ];
 
   function initSeriesLinks() {

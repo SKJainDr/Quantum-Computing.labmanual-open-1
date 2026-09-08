@@ -20,10 +20,11 @@ Identical engine and functionality to your existing Quantum Computers / Quantum 
 
 - **Dark / light theme** toggle, remembers your choice
 - **Read aloud** (Web Speech API) with sentence highlighting and auto-advance to the next chapter
+- **Read aloud from any point** — click any paragraph, heading, list item, or box text in the reading pane to start (or jump) narration from there, instead of always restarting at the top of the chapter
 - **Clickable, deep-linkable navigation** — every chapter, every on-page subsection, Prev/Next buttons
 - **Filter box** in the sidebar to jump to a chapter/experiment quickly
 - **Visitor counter** and **like button**, backed by [Abacus](https://abacus.jasoncameron.dev) (namespace `qc-lab-manual-1-skjain` — unique to this site, won't collide with your other books' counters)
-- **"More in this series"** links in the sidebar, already pointed at your deployed Volume I and Volume II textbook sites
+- **"More in this series"** links in the sidebar, pointed at your deployed Volume I, Volume II, and Volume III textbook sites, plus Lab Manual II
 - Responsive, collapsible sidebar on mobile
 
 ## How the manual content is structured
@@ -71,4 +72,6 @@ Uses your glasses-branded icon set (matching the "plain" convention already esta
 - Volume I — Quantum Computers: `https://skjaindr.github.io/Quantum-Computing.book-open-1/`
 - Volume II — Quantum Algorithms & Complexity: `https://skjaindr.github.io/Quantum-Computing.book-open-2/`
 
-If you'd like those two textbook sites to link back to this Lab Manual too, add an entry to their own `SERIES_LINKS` array pointing at wherever you deploy this repo.
+- Lab Manual II — Advanced Quantum Algorithms & Hardware: `https://skjaindr.github.io/quantum-computing-lab-manual-2-site-plain/`
+
+If you'd like your textbook sites to link back to this Lab Manual too, add an entry to their own `SERIES_LINKS` array pointing at wherever you deploy this repo.
